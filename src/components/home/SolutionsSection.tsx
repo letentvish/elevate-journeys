@@ -1,7 +1,7 @@
 
 import React from 'react';
 import SolutionCard from '../common/SolutionCard';
-import { Rocket, Building, Cloud, Path, Trophy } from 'lucide-react';
+import { Rocket, Building, Cloud, Trophy, Route } from 'lucide-react';
 
 const SolutionsSection: React.FC = () => {
   const solutions = [
@@ -18,7 +18,7 @@ const SolutionsSection: React.FC = () => {
       link: '/leadership'
     },
     {
-      icon: Path,
+      icon: Route,
       title: 'AI-Powered LMS: MILE',
       description: 'Accelerate skills with personalized learning journeys tailored for your organization.',
       link: '/mile'
