@@ -2,9 +2,10 @@
 import React from 'react';
 import BenefitCard from '../common/BenefitCard';
 import { Building } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 
 // Custom icons for benefits
-const ChartUpIcon: React.FC<{ className?: string }> = ({ className }) => (
+const ChartUpIcon: LucideIcon = React.forwardRef((props, ref) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
     width="24" 
@@ -15,14 +16,17 @@ const ChartUpIcon: React.FC<{ className?: string }> = ({ className }) => (
     strokeWidth="2" 
     strokeLinecap="round" 
     strokeLinejoin="round" 
-    className={className}
+    {...props}
+    ref={ref}
   >
     <path d="M3 3v18h18" />
     <path d="m19 9-5 5-4-4-3 3" />
   </svg>
-);
+));
 
-const PersonWithGearIcon: React.FC<{ className?: string }> = ({ className }) => (
+ChartUpIcon.displayName = 'ChartUpIcon';
+
+const PersonWithGearIcon: LucideIcon = React.forwardRef((props, ref) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
     width="24" 
@@ -33,7 +37,8 @@ const PersonWithGearIcon: React.FC<{ className?: string }> = ({ className }) => 
     strokeWidth="2" 
     strokeLinecap="round" 
     strokeLinejoin="round" 
-    className={className}
+    {...props}
+    ref={ref}
   >
     <path d="M12 2a5 5 0 0 0-5 5c0 2.76 2.24 5 5 5s5-2.24 5-5a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
     <path d="M19.812 16.073a1 1 0 0 0-.79-.079l-2.026.679a1.046 1.046 0 0 0-.326.155c-.76.286-1.21.976-1.21 1.772v2.4c0 .6.4 1 1 1h1.8c.736 0 1.356-.582 1.444-1.314l.473-3.195a1 1 0 0 0-.365-.947z"/>
@@ -42,7 +47,9 @@ const PersonWithGearIcon: React.FC<{ className?: string }> = ({ className }) => 
     <path d="m13.5 16.5 1 1" />
     <path d="M13.5 14.5 15 16" />
   </svg>
-);
+));
+
+PersonWithGearIcon.displayName = 'PersonWithGearIcon';
 
 const CapabilityBenefits: React.FC = () => {
   const benefits = [
